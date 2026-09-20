@@ -1,0 +1,10 @@
+profile: bringmeback-travel
+version: "1.0.0"
+kinds: [destination, place, visit, experience, resource, collection, article, note, overlay]
+access: [public, private]
+sensitivity: [ordinary, intimate]
+publication: [allowed, review_required, internal]
+status: [active, historical, check_required, draft]
+evidence: [personal_experience, official_source, published_article, secondhand, unverified]
+place_categories: [transport, neighbourhood, museum, memorial, landmark, market, cafe, restaurant, pub, cocktail_bar, jazz_club, excursion, libertine_club]
+tags: [architecture, arts, canals, cocktails, culture, food, heritage, jazz, nightlife, stroll, transport, travel, libertinage, bdsm, bisexuality, meetup, return_transport]

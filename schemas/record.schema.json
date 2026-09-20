@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BringMeBack travel profile v1.0.0",
+  "type": "object",
+  "required": [
+    "id",
+    "kind",
+    "title",
+    "okf_version",
+    "x-bringmeback",
+    "access",
+    "sensitivity",
+    "publication",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^bmb:[a-z]+:[a-z0-9:-]+$"
+    },
+    "kind": {
+      "enum": [
+        "destination",
+        "place",
+        "visit",
+        "experience",
+        "resource",
+        "collection",
+        "article",
+        "note",
+        "overlay"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "okf_version": {
+      "const": "0.2"
+    },
+    "x-bringmeback": {
+      "type": "object",
+      "required": [
+        "version"
+      ],
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^1\\.[0-9]+\\.[0-9]+$"
+        }
+      },
+      "additionalProperties": true
+    },
+    "access": {
+      "enum": [
+        "public",
+        "private"
+      ]
+    },
+    "sensitivity": {
+      "enum": [
+        "ordinary",
+        "intimate"
+      ]
+    },
+    "publication": {
+      "enum": [
+        "allowed",
+        "review_required",
+        "internal"
+      ]
+    },
+    "status": {
+      "enum": [
+        "active",
+        "historical",
+        "check_required",
+        "draft"
+      ]
+    },
+    "country_code": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "city": {
+      "type": "string"
+    },
+    "source_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "extends": {
+      "type": "string"
+    },
+    "fact_checked_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "visited_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}
